@@ -1,5 +1,9 @@
+import org.gradle.api.publish.PublishingExtension
+import org.gradle.api.publish.maven.MavenPublication
+
 plugins {
     id("java")
+    id("maven-publish")
 }
 
 group = "org.sa"
@@ -17,6 +21,18 @@ dependencies {
     implementation("org.json:json:20231013")
 }
 
+
 tasks.test {
     useJUnitPlatform()
+}
+
+configure<PublishingExtension> {
+    publications {
+        create<MavenPublication>("mavenJava") {
+            from(components["java"])
+        }
+    }
+    repositories {
+        mavenLocal()
+    }
 }
