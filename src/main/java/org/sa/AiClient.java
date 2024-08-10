@@ -10,7 +10,7 @@ import java.io.OutputStreamWriter;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
-public class OpenAiGptApi {
+public class AiClient {
 
   private static final String CHARSET = "utf-8";
   private static final String API_URL = "https://api.openai.com/v1/chat/completions";
@@ -18,29 +18,29 @@ public class OpenAiGptApi {
   private String wholeResponse;
   private String answer;
 
-  public OpenAiGptApi OpenAiGptApi(String gptModel) {
+  public AiClient OpenAiGptApi(String gptModel) {
     gptModelType = gptModel;
     return this;
   }
 
   //https://platform.openai.com/docs/models
 
-  public OpenAiGptApi setModelGpt35Turbo() {
+  public AiClient setModelGpt35Turbo() {
     this.gptModelType = "gpt-3.5-turbo";
     return this;
   }
 
-  public OpenAiGptApi setModelGpt4o() {
+  public AiClient setModelGpt4o() {
     this.gptModelType = "gtp-4o";
     return this;
   }
 
-  public OpenAiGptApi setModelGpt4oMini() {
+  public AiClient setModelGpt4oMini() {
     this.gptModelType = "gpt-4o-mini";
     return this;
   }
 
-  public OpenAiGptApi setModelGpt4Turbo() {
+  public AiClient setModelGpt4Turbo() {
     this.gptModelType = "gpt-4-turbo";
     return this;
   }
