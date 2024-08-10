@@ -1,2 +1,2 @@
-rootProject.name = "open-ai-gpt-api"
+rootProject.name = "ai-client"
 
