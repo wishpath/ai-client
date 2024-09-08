@@ -12,9 +12,9 @@ public class WordAI {
   public static String getWordTopic(String word, String topicSuggestions) {
     return new AiClient().getAnswer(
         "Which 3 provided general topics does the word \"" +
-            word + "\" fit best, and why? Explain each. Provided topics: " +
+            word + "\" fit best, and why? Explain each. Provided topics: \n" +
             topicSuggestions +
-            ". Be concise.");
+            "\nBe concise.");
   }
 
   public static String getWordDefinition(String word) {
