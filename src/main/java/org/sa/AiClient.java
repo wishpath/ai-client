@@ -14,11 +14,11 @@ public class AiClient {
 
   private static final String CHARSET = "utf-8";
   private static final String API_URL = "https://api.openai.com/v1/chat/completions";
-  private String gptModelType = "gpt-4o";
+  private String gptModelType = "gpt-5-nano";
   private String wholeResponse;
   private String answer;
 
-  public AiClient OpenAiGptApi(String gptModel) {
+  public AiClient openAiGptApi(String gptModel) {
     gptModelType = gptModel;
     return this;
   }
@@ -31,7 +31,7 @@ public class AiClient {
   }
 
   public AiClient setModelGpt4o() {
-    this.gptModelType = "gtp-4o";
+    this.gptModelType = "gpt-4o";
     return this;
   }
 
@@ -44,6 +44,22 @@ public class AiClient {
     this.gptModelType = "gpt-4-turbo";
     return this;
   }
+
+  public AiClient setModelGpt5() {
+    this.gptModelType = "gpt-5"; // best one, as of 2025 11 11
+    return this;
+  }
+
+  public AiClient setModelGpt5Mini() {
+    this.gptModelType = "gpt-5-mini";  // cheaper, faster version of GPT-5 (good balance of cost and speed)
+    return this;
+  }
+
+  public AiClient setModelGpt5Nano() {
+    this.gptModelType = "gpt-5-nano";  // cheapest and fastest GPT-5 variant (lowest cost, lowest capability)
+    return this;
+  }
+
 
   public String getAnswer(String question) {
     try {
