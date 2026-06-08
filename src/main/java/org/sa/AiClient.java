@@ -88,7 +88,7 @@ public class AiClient {
     HttpURLConnection con = (HttpURLConnection) new URL(API_URL).openConnection();
     con.setRequestMethod("POST");
     con.setRequestProperty("Authorization", "Bearer " + getOpenaiAPIKeyAsMyWindowsEnvironmentVariable());
-    con.setRequestProperty("Content-Type", "application/json; utf-8");
+    con.setRequestProperty("Content-Type", "application/json; charset=utf-8");
     con.setDoOutput(true);
     return con;
   }
